@@ -7,7 +7,7 @@ from .parser import Table, parse_document
 def import_database(source: Path, output: Path) -> None:
     tables = parse_document(source)
     if output.exists():
-        raise FileExistsError(f"Файл базы уже существует: {output}")
+        raise FileExistsError(f"Database file already exists: {output}")
 
     try:
         with sqlite3.connect(output) as connection:
@@ -40,7 +40,10 @@ def _insert_records(connection: sqlite3.Connection, table: Table) -> None:
     sql = f'INSERT INTO "{table.name}" ({column_names}) VALUES ({placeholders})'
 
     converted_records = [
-        [_convert_value(value, column.data_type) for value, column in zip(record, table.columns)]
+        [
+            _convert_value(value, column.data_type)
+            for value, column in zip(record, table.columns)
+        ]
         for record in table.records
     ]
     connection.executemany(sql, converted_records)
@@ -53,5 +56,8 @@ def _convert_value(value: str, data_type: str):
         if data_type == "REAL":
             return float(value)
     except ValueError as error:
-        raise ValueError(f"Значение {value!r} не подходит для типа {data_type}") from error
+        raise ValueError(
+            f"Value {value!r} is not valid for type {data_type}"
+        ) from error
+
     return value
