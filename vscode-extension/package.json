@@ -5,6 +5,10 @@
     "version": "0.0.1",
     "publisher": "azikerkinov07-cell",
     "license": "GPL-3.0-only",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/azikerkinov07-cell/Data-Load-Markup-Language-DLML-"
+    },
     "engines": {
         "vscode": "^1.85.0"
     },
