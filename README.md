@@ -11,7 +11,7 @@ contains one `<field>` for every column. The importer creates a new SQLite
 database file and adds the records from the DLML document.
 
 ```bash
-python -m dlml examples/users.dlml --output users.db
+python3 -m dlml examples/users.dlml --output users.db
 ```
 
 Run that command from this directory.
