@@ -1,0 +1,12 @@
+.vscode/
+.idea/
+
+.venv/
+.env
+
+.DS_Store
+Desktop.ini
+
+*.db
+*.pyc
+__pycache__/

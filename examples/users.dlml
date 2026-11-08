@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE database SYSTEM "../dlml.dtd">
+<database>
+    <table name="users">
+        <column name="id" type="INTEGER" primary-key="true" />
+        <column name="name" type="TEXT" />
+        <column name="age" type="INTEGER" />
+
+        <record>
+            <field>1</field>
+            <field>Mikhail</field>
+            <field>12</field>
+        </record>
+        <record>
+            <field>2</field>
+            <field>Anna</field>
+            <field>11</field>
+        </record>
+    </table>
+</database>
