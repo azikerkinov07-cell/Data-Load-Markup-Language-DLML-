@@ -1,0 +1,36 @@
+{
+    "name": "dlml-language-support",
+    "displayName": "DLML Language Support",
+    "description": "Syntax highlighting for DLML files",
+    "version": "0.0.1",
+    "publisher": "azikerkinov07-cell",
+    "license": "GPL-3.0-only",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "dlml",
+                "aliases": [
+                    "DLML",
+                    "Data Load Markup Language"
+                ],
+                "extensions": [
+                    ".dlml"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "dlml",
+                "scopeName": "source.dlml",
+                "path": "./syntaxes/dlml.tmLanguage.json"
+            }
+        ]
+    }
+}

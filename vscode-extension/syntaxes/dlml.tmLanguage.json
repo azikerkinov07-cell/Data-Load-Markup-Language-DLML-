@@ -1,0 +1,71 @@
+{
+    "scopeName": "source.dlml",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#processingInstruction"
+        },
+        {
+            "include": "#doctype"
+        },
+        {
+            "include": "#tag"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "name": "comment.block.dlml",
+            "begin": "<!--",
+            "end": "-->"
+        },
+        "processingInstruction": {
+            "name": "meta.embedded.block.xml",
+            "begin": "<\\?",
+            "end": "\\?>"
+        },
+        "doctype": {
+            "name": "meta.tag.doctype.dlml",
+            "match": "<!DOCTYPE[^>]*>"
+        },
+        "tag": {
+            "name": "meta.tag.dlml",
+            "begin": "(</?)([A-Za-z_][A-Za-z0-9_-]*)",
+            "beginCaptures": {
+                "1": {
+                    "name": "punctuation.definition.tag.dlml"
+                },
+                "2": {
+                    "name": "entity.name.tag.dlml"
+                }
+            },
+            "end": "/?>",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.tag.dlml"
+                }
+            },
+            "patterns": [
+                {
+                    "name": "entity.other.attribute-name.dlml",
+                    "match": "[A-Za-z_:][A-Za-z0-9_.:-]*(?=\\s*=)"
+                },
+                {
+                    "name": "keyword.operator.assignment.dlml",
+                    "match": "="
+                },
+                {
+                    "name": "string.quoted.double.dlml",
+                    "begin": "\"",
+                    "end": "\""
+                },
+                {
+                    "name": "string.quoted.single.dlml",
+                    "begin": "'",
+                    "end": "'"
+                }
+            ]
+        }
+    }
+}
