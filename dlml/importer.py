@@ -4,10 +4,17 @@ from pathlib import Path
 from .parser import Table, parse_document
 
 
-def import_database(source: Path, output: Path) -> None:
+def import_database(
+    source: Path,
+    output: Path,
+    overwrite: bool = False,
+) -> None:
     tables = parse_document(source)
+
     if output.exists():
-        raise FileExistsError(f"Database file already exists: {output}")
+        if not overwrite:
+            raise FileExistsError(f"Database file already exists: {output}")
+        output.unlink()
 
     try:
         with sqlite3.connect(output) as connection:
