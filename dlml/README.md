@@ -8,7 +8,7 @@ SQLite.
 
 The first version supports `TEXT`, `INTEGER`, and `REAL` columns. Each record
 contains one `<field>` for every column. The importer creates a new SQLite
-database file and adds the records from the DLML document.
+database file and adds the records from the DLML document
 
 ```bash
 python3 -m dlml examples/users.dlml --output users.db
