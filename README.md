@@ -1,4 +1,4 @@
-# DLML
+# Data Load Markup Language (DLML)
 
 DLML (Data Loading Markup Language) is a small learning project for describing
 tables and their records in an XML-compatible format, then importing them into
