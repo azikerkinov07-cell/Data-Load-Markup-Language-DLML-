@@ -11,13 +11,12 @@ def main() -> None:
     parser.add_argument(
         "source",
         type=Path,
-        help="path to the .dlml file",
+        help="path to a .dlml file, or its name without the extension",
     )
     parser.add_argument(
         "--output",
         type=Path,
-        required=True,
-        help="path for the output .db file",
+        help="path for the output .db file (default: source name with .db extension)",
     )
     parser.add_argument(
         "--overwrite",
@@ -27,13 +26,23 @@ def main() -> None:
 
     args = parser.parse_args()
 
+    source = args.source
+    if not source.suffix:
+        source = source.with_suffix(".dlml")
+
+    output = args.output or source.with_suffix(".db")
+
     try:
         import_database(
-            args.source,
-            args.output,
+            source,
+            output,
             overwrite=args.overwrite,
         )
     except (ValueError, FileExistsError) as error:
         parser.error(str(error))
 
-    print(f"Database created: {args.output}")
+    print(f"Database created: {output}")
+
+
+if __name__ == "__main__":
+    main()
