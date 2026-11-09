@@ -10,11 +10,15 @@ The first version supports `TEXT`, `INTEGER`, and `REAL` columns. Each record
 contains one `<field>` for every column. The importer creates a new SQLite
 database file and adds the records from the DLML document.
 
-```bash
-python3 -m dlml examples/users.dlml --output users.db
-```
-
 Run that command from this directory.
+
+## Installation
+
+First, you need to clone the repository using the following command: `git clone git@github.com:azikerkinov07-cell/Data-Load-Markup-Language-DLML-.git` . Next, you need to run this command: `pipx install --force /path/DLML-Project`.
+
+## Usage
+
+To use this project, you first need to download it using the command provided above. To convert a .dlml file into a .db file (SQLite3), you should run the following command: `dlml users`. Note, however, that this will not work if you need to overwrite an existing file; for that purpose, the --overwrite flag is available: `dlml users --overwrite`
 
 ## Project layout
 

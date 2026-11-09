@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dlml-importer"
+version = "0.1.0"
+description = "Import DLML files into SQLite"
+requires-python = ">=3.10"
+license = "GPL-3.0-only"
+
+[project.scripts]
+dlml = "dlml.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dlml*"]

@@ -10,3 +10,6 @@ Desktop.ini
 *.db
 *.pyc
 __pycache__/
+
+build/
+*.egg-info/
