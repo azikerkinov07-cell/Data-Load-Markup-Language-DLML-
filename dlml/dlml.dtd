@@ -1,9 +1,0 @@
-<!ELEMENT database (table+)>
-<!ELEMENT table (column+, record*)>
-<!ATTLIST table name CDATA #REQUIRED>
-<!ELEMENT column EMPTY>
-<!ATTLIST column name CDATA #REQUIRED>
-<!ATTLIST column type (TEXT|INTEGER|REAL) #REQUIRED>
-<!ATTLIST column primary-key (true|false) "false">
-<!ELEMENT record (field+)>
-<!ELEMENT field (#PCDATA)>
