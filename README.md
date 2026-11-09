@@ -14,11 +14,11 @@ Run that command from this directory.
 
 ## Installation
 
-First, you need to clone the repository using the following command: `git clone git@github.com:azikerkinov07-cell/Data-Load-Markup-Language-DLML-.git` . Next, you need to run this command: `pipx install --force /path/DLML-Project`.
+First, you need to clone the repository using the following command: `git clone git@github.com:azikerkinov07-cell/Data-Load-Markup-Language-DLML-.git` . Next, you need to run this command: `pipx install --force /path/Data-Load-Markup-Language-DLML-`.
 
 ## Usage
 
-To use this project, you first need to download it using the command provided above. To convert a .dlml file into a .db file (SQLite3), you should run the following command: `dlml users`. Note, however, that this will not work if you need to overwrite an existing file; for that purpose, the --overwrite flag is available: `dlml users --overwrite`
+To use this project, you first need to download it using the command provided above. To convert a .dlml file into a .db file (SQLite3), you should run the following command: `dlml users`. Note, however, that this will not work if you need to overwrite an existing file; for that purpose, the --overwrite flag is available: `dlml examples/users --overwrite`
 
 ## Project layout
 
